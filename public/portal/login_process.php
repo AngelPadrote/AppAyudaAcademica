@@ -7,7 +7,7 @@ echo $numero = $_POST['numero'] ?? '';
 echo $password = $_POST['password'] ?? '';
 
 if ($numero === '' || $password === '') {
-    header('Location: login.php?error=' . urlencode('Completa todos los campos.'));
+    header('Location: PreLogin.php?error=' . urlencode('Completa todos los campos.'));
     exit;
 }
 

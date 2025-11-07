@@ -21,7 +21,7 @@ if (isset($_SESSION['user'])) {
     <p class="subtitle">Selecciona tu tipo de acceso</p>
   </header>
   <div class="card">
-    <a href="#" class="back">&larr; Acceso Estudiante</a>
+    <a href="PreLogin.php" class="back">&larr; Acceso Estudiante</a>
     <?php if (!empty($_GET['error'])): ?>
       <div class="alert"><?=htmlspecialchars($_GET['error'])?></div>
     <?php endif; ?>

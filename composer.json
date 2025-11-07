@@ -83,5 +83,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+    	{
+        	"type": "vcs",
+        	"url":  "git@github.com:dev-cucei-itrans/siiau-api-client.git"
+    	}
+    ]
 }
