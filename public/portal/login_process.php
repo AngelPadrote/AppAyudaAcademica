@@ -37,3 +37,16 @@ if ($estudiante) {
     header('Location: login.php?error=' . urlencode('Usuario no encontrado.'));
     exit;
 }
+
+
+function getEstudiante($numeroEstudiante) {
+    global $client;
+    $response = $client->get('/rest/v1/estudiantes', [
+        'query' => [
+            'select' => '*',
+            'NumeroEstudiante' => 'eq.' . $numeroEstudiante
+        ]
+    ]);
+    $data = json_decode($response->getBody(), true);
+    return $data[0] ?? null;
+}

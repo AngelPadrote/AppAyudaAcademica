@@ -15,20 +15,7 @@ $client = new Client([
     ],
 ]);
 
-// Obtener estudiante por número
-function getEstudiante($numeroEstudiante) {
-    global $client;
-    $response = $client->get('/rest/v1/estudiantes', [
-        'query' => [
-            'select' => '*',
-            'NumeroEstudiante' => 'eq.' . $numeroEstudiante
-        ]
-    ]);
-    $data = json_decode($response->getBody(), true);
-    return $data[0] ?? null;
-}
 
-// Crear estudiante
 function createEstudiante($numero, $nombre, $password, $email = null) {
     global $client;
     $body = [

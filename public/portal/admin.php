@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portal Académico - Acceso Estudiante</title>
+<title>Portal Académico - Acceso Administrador</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
     <?php if (!empty($_GET['error'])): ?>
       <div class="alert"><?=htmlspecialchars($_GET['error'])?></div>
     <?php endif; ?>
-    <form action="login_process.php" method="post" autocomplete="off">
+    <form action="login_process_admin.php" method="post" autocomplete="off">
       <label>Usuario Administrador</label>
       <input name="numero" type="text" placeholder="Ej: 2024001234" required>
       <label>Contraseña</label>
