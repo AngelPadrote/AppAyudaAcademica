@@ -16,9 +16,7 @@ if ($estudiante) {
         $_SESSION['user'] = [
             'numero' => $estudiante['NumeroEstudiante'],
             'nombre' => $estudiante['Nombre'],
-            'carrera' => $estudiante['Carrera'],
             'correoInstitucional' => $estudiante['InstitucionalEmail'],
-            'email' => $estudiante['Email'],
             'telefono' => $estudiante['NumeroCelular'],
             'estado' => $estudiante['Estado']
 
@@ -38,10 +36,10 @@ if ($estudiante) {
 
 function getEstudiante($numeroEstudiante) {
     global $client;
-    $response = $client->get('/rest/v1/estudiantes', [
+    $response = $client->get('/rest/v1/Admins', [
         'query' => [
             'select' => '*',
-            'NumeroEstudiante' => 'eq.' . $numeroEstudiante
+            'Codigo' => 'eq.' . $numeroEstudiante
         ]
     ]);
     $data = json_decode($response->getBody(), true);
